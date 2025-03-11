@@ -11,8 +11,8 @@ variable "resource_group_location" {
 # }
 
 variable "resource_group_name" {
-  type = string
-  default = "azure-resource-group"
+  type        = string
+  default     = "azure-resource-group"
   description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
 }
 
@@ -26,4 +26,9 @@ variable "key_name" {
   type        = string
   description = "The name of the key to be created. The value will be randomly generated if blank."
   default     = "azure-vault-key-name"
+}
+
+variable "database_admin_username" {
+  type    = string
+  default = "sa"
 }

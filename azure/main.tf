@@ -14,3 +14,12 @@ module "azure_key_vault" {
   vault_name          = var.vault_name
   key_name            = var.key_name
 }
+
+module "azure_database_admin_username" {
+  source = "./azure-key-vault-secret"
+
+  resource_group_name = var.resource_group_name
+  vault_name          = module.azure_key_vault.azurerm_key_vault_name
+  secret_name         = "database-admin-username"
+  secret_value        = var.database_admin_username
+}
