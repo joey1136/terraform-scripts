@@ -32,3 +32,17 @@ variable "database_admin_username" {
   type    = string
   default = "sa"
 }
+
+variable "database_admin_password" {
+  type    = string
+  default = "P@ssword"
+}
+variable "database_name" {
+  type    = string
+  default = "azure-database-server-mssql"
+}
+
+variable "sql_db_name" {
+  type    = string
+  default = "azure-database-mssql"
+}

@@ -15,11 +15,12 @@ module "azure_key_vault" {
   key_name            = var.key_name
 }
 
-module "azure_database_admin_username" {
-  source = "./azure-key-vault-secret"
+module "azure_database" {
+  source = "./azure-mssql-database"
 
-  resource_group_name = var.resource_group_name
-  vault_name          = module.azure_key_vault.azurerm_key_vault_name
-  secret_name         = "database-admin-username"
-  secret_value        = var.database_admin_username
+  resource_group_name     = var.resource_group_name
+  vault_name              = module.azure_key_vault.azurerm_key_vault_name
+  database_admin_username = var.database_admin_username
+  sql_db_name             = var.sql_db_name
+  database_name           = var.database_name
 }
