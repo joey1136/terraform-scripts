@@ -1,14 +1,5 @@
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
-}
-
-data "azurerm_key_vault" "vault" {
-  name                = var.vault_name
-  resource_group_name = data.azurerm_resource_group.rg.name
-}
-
 resource "azurerm_key_vault_secret" "secret" {
-  key_vault_id = data.azurerm_key_vault.vault.id
+  key_vault_id = var.azurerm_key_vault_id
   name         = var.secret_name
   value        = var.secret_value
 

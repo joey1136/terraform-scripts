@@ -3,6 +3,8 @@
 *.tfstate.backup
 *.tfstate.lock.info
 *.tfplan
+*.tfvars
+*.tfstate*
 
 # logs
 *.log

@@ -1,10 +1,5 @@
-variable "resource_group_name" {
+variable "azurerm_key_vault_id" {
   type = string
-}
-
-variable "vault_name" {
-  type        = string
-  description = "The name of the existing key vault."
 }
 
 variable "secret_name" {

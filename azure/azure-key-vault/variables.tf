@@ -2,6 +2,10 @@ variable "resource_group_name" {
   type = string
 }
 
+variable "resource_group_location" {
+  type = string
+}
+
 variable "vault_name" {
   type        = string
   description = "The name of the key vault to be created. The value will be randomly generated if blank."
@@ -33,7 +37,7 @@ variable "key_permissions" {
 variable "secret_permissions" {
   type        = list(string)
   description = "List of secret permissions."
-  default     = ["Set", "Get", "List"]
+  default     = ["Set", "Get", "List", "Delete", "Recover"]
 }
 
 variable "key_type" {

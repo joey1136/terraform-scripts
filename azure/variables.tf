@@ -1,6 +1,6 @@
 variable "resource_group_location" {
   type        = string
-  default     = "eastus"
+  default     = "eastasia"
   description = "Location of the resource group."
 }
 
@@ -30,19 +30,24 @@ variable "key_name" {
 
 variable "database_admin_username" {
   type    = string
-  default = "sa"
+  default = "azureadmin"
 }
 
 variable "database_admin_password" {
   type    = string
-  default = "P@ssword"
+  default = ""
 }
-variable "database_name" {
+variable "mssql_server_name" {
   type    = string
-  default = "azure-database-server-mssql"
+  default = "azure-server-mssql"
 }
 
-variable "sql_db_name" {
+variable "mssql_db_name" {
   type    = string
   default = "azure-database-mssql"
+}
+
+variable "whitelist_ip_address" {
+  type    = list(string)
+  default = []
 }

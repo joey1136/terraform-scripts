@@ -1,27 +1,26 @@
-variable "resource_group_name" {
+variable "server_id" {
+  type = string
+}
+
+variable "mssql_db_name" {
+  type = string
+}
+
+variable "size" {
+  type = object({
+    sku_name    = string
+    max_size_gb = number
+  })
+
+  default = {
+    sku_name    = "Basic"
+    max_size_gb = 2
+  }
+}
+
+variable "collation" {
   type        = string
-  default     = "azure-resource-group"
-  description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
-}
+  description = "The collation of the database. "
 
-variable "vault_name" {
-  type        = string
-  description = "The name of the key vault to be created. The value will be randomly generated if blank."
-}
-
-variable "database_name" {
-  type = string
-}
-
-variable "database_admin_username" {
-  type = string
-}
-
-variable "database_admin_password" {
-  type    = string
-  default = "P@ssword"
-}
-
-variable "sql_db_name" {
-  type = string
+  default = "SQL_Latin1_General_CP1_CI_AS"
 }
